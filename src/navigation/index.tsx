@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SCREENS } from "@shared-constants";
 import { LightTheme, DarkTheme, palette } from "@theme/themes";
 // ? Screens
+import MapScreen from "@screens/map/MapScreen";
 import HomeScreen from "@screens/home/HomeScreen";
 import SearchScreen from "@screens/search/SearchScreen";
 import DetailScreen from "@screens/detail/DetailScreen";
@@ -49,6 +50,9 @@ const Navigation = () => {
       case SCREENS.PROFILE:
         iconName = focused ? "person" : "person-outline";
         break;
+      case SCREENS.MAP:
+        iconName = focused ? "map" : "map-outline";
+        break;
       default:
         iconName = focused ? "home" : "home-outline";
         break;
@@ -71,6 +75,7 @@ const Navigation = () => {
         })}
       >
         <Tab.Screen name={SCREENS.HOME} component={HomeScreen} />
+        <Tab.Screen name={SCREENS.MAP} component={MapScreen} />
         <Tab.Screen name={SCREENS.SEARCH} component={SearchScreen} />
         <Tab.Screen
           name={SCREENS.NOTIFICATION}
